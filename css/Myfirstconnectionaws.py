@@ -1,13 +1,15 @@
 import configparser
+import boto3
+
 
 # Crea un objeto de configuración
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('G:\My Drive\Docs\Scripts\Github\repositorio\css\config.ini')
 
 # Obtén las credenciales 
 aws_access_key_id = config['default']['aws_access_key_id']
-aws_access_key_id = config['default']['aws_secret_access_key']
+aws_secret_access_key = config['default']['aws_secret_access_key']
 region_name = config['default']['region_name']
 
 
