@@ -9,7 +9,7 @@ Connect-AzAccount
 
 Get-AzContext
 Get-AzSubscription
-Get-AzSubscription -SubscriptionName "P8-Real Hands-On Labs" | Select-AzSubscription
+Get-AzSubscription -SubscriptionName "GrupoAlicorp-identity" | Select-AzSubscription
 
 
 #----------------------------------------------------------[Declarations]-----------------------------------------------------------
@@ -20,13 +20,12 @@ $PeruTime = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId($datetime, 'SA Pacific
 $date = (Get-Date $PeruTime -UFormat "%Y%m%d-%H%M%S").ToString()
 $FilePath = $(get-location).Path;
 
-$SnapshotRGName ='1-e2fad92a-playground-sandbox',
-
-$VMNames = @('vm-test-01'), # Ingrese una o más VM's
-$SubscriptionId = '9734ed68-621d-47ed-babd-269110dbacb1',
-$VMResourceGroup = '1-e2fad92a-playground-sandbox',
-$SnapshotRGName ='1-e2fad92a-playground-sandbox',   
-$TaskName = 'CH2595842_'
+$SnapshotRGName ='ali-eus2-rg-id-prd-vm-dns-01'
+$VMNames = @('VPAZRDNS02') # Ingrese los nombres una o más VM's
+$SubscriptionId = '23274737-f080-4f88-a0c2-d65761f79c02'
+$VMResourceGroup = 'ali-eus2-rg-id-prd-vm-dns-01'
+$SnapshotRGName ='ali-eus2-rg-id-prd-vm-dns-01'
+$TaskName = 'CH2595843_';
 
 
 
