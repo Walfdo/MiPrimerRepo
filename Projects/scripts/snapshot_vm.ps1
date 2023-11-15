@@ -3,13 +3,14 @@
 #-----------------------------------------------------------[Authentication]------------------------------------------------------------
 
 #Log into Azure
-Connect-AzAccount
+Connect-AzAccount -Tenant '4389fecf-09b9-4e58-a8a1-60be4e33bcce' -SubscriptionId 'a2515646-bf96-4315-9654-0d87faefcfad'
+
 
 #Select the correct subscription
 
 Get-AzContext
 Get-AzSubscription
-Get-AzSubscription -SubscriptionName "GrupoAlicorp-identity" | Select-AzSubscription
+Get-AzSubscription -SubscriptionName "azeas-genesisperu-ldz01" | Select-AzSubscription
 
 
 #----------------------------------------------------------[Declarations]-----------------------------------------------------------
@@ -20,12 +21,12 @@ $PeruTime = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId($datetime, 'SA Pacific
 $date = (Get-Date $PeruTime -UFormat "%Y%m%d-%H%M%S").ToString()
 $FilePath = $(get-location).Path;
 
-$SnapshotRGName ='ali-eus2-rg-id-prd-vm-dns-01'
-$VMNames = @('VPAZRDNS02') # Ingrese los nombres una o más VM's
-$SubscriptionId = '23274737-f080-4f88-a0c2-d65761f79c02'
-$VMResourceGroup = 'ali-eus2-rg-id-prd-vm-dns-01'
-$SnapshotRGName ='ali-eus2-rg-id-prd-vm-dns-01'
-$TaskName = 'CH2595843_';
+$SnapshotRGName ='arsgrsnapshots'
+$VMNames = @('j6-prd-web3-pe','j6-prd-web3-pe','j6-prd-web3-pe','j6-prd-web3-pe') # Ingrese los nombres una o más VM's
+$SubscriptionId = 'd0f9fb74-c43d-4d87-8167-c90bb965680b'
+$VMResourceGroup = 'ARSGRYPEJ6BEASTUSPRD01'
+$SnapshotRGName ='arsgrsnapshots'
+$TaskName = 'SR21743086_';
 
 
 
